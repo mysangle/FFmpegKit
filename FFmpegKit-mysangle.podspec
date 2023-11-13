@@ -8,20 +8,17 @@ Pod::Spec.new do |s|
     DESC
 
     s.homepage         = 'https://github.com/mysangle/FFmpegKit-mysangle'
-    s.authors = { 'kintan' => '554398854@qq.com' }
+    s.authors = { 'mysangle' => 'mysangle@gmail.com' }
     s.license          = 'MIT'
     s.source           = { :git => 'https://github.com/mysangle/FFmpegKit-mysangle.git', :tag => s.version.to_s }
 
     s.ios.deployment_target = '13.0'
-    s.osx.deployment_target = '10.15'
-    # s.watchos.deployment_target = '2.0'
-    s.tvos.deployment_target = '13.0'
-    s.default_subspec = 'FFmpegKit'
+    s.default_subspec = 'FFmpegKit-mysangle'
     s.static_framework = true
     s.source_files = 'Sources/FFmpegKit/**/*.{h,c,m}'
-    s.subspec 'FFmpegKit' do |ffmpeg|
+    s.subspec 'FFmpegKit-mysangle' do |ffmpeg|
         ffmpeg.libraries   = 'bz2', 'z', 'iconv', 'xml2', 'c++'
         ffmpeg.vendored_frameworks = 'Sources/Libavcodec.xcframework','Sources/Libavfilter.xcframework','Sources/Libavformat.xcframework','Sources/Libavutil.xcframework','Sources/Libswresample.xcframework','Sources/Libswscale.xcframework', 'Sources/Libdav1d.xcframework', 'Sources/Libdav1d.xcframework', 'Sources/Libsrt.xcframework', 'Sources/Libzvbi.xcframework'
-        ffmpeg.dependency 'OpenSSL'
+        ffmpeg.dependency 'OpenSSL-mysangle'
     end
 end
